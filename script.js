@@ -3,9 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const searchInput = document.getElementById('search');
     const meallist= document.getElementById('meals'); 
     const categorylist  = document.getElementById('categories')
-    const toggleSearchTypeButton = document.getElementById('toggleSearchType'); 
-    const submitButton = document.querySelector('input[type="submit"]'); 
-    let searchType = 'user';
+    const button = document.getElementById('btn1');
     form.addEventListener('submit', function(event) {
         // Prevent the default form submission behavior
         event.preventDefault();
@@ -148,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function() {
             reposList.appendChild(li);
       });
     }
-});
+
 
  let allContainers = document.querySelectorAll('.container')
 let allTxts= document.querySelectorAll('.text')

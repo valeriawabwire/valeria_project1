@@ -69,5 +69,29 @@ background: url("images/food.jpg") ;
     margin-left:0px;
     margin-right: 0px;
 }
-
-
+ #btn1{
+background-color: aqua;
+color:black;
+height: 30px;
+border-radius: 10px;
+cursor: pointer;
+box-shadow: 10px 10px 10px white;
+transition: opacity 0.15s;
+}
+#btn1:hover{
+  opacity: 0.8;
+}
+#btn1:active{
+  opacity: 0.5;
+}
+#mode{
+  background-color: black;
+  color: whitesmoke;
+  border-radius: 10px;
+}
+#mode:hover{
+  opacity: 0.8;
+}
+#mode:active{
+  opacity: 0.5;
+}
