@@ -1,27 +1,27 @@
 document.addEventListener("DOMContentLoaded", function() {
-  function fetchmeals() {
-         fetch("http://localhost:4000/meals1").then(res=>res.json()).then( data =>{
-            let meals = data.data.meals
-
-    for (let meals of meals){
-        let img = document.createElement('img')
-        let p = document.createElement('p')
-        p.textContent = meals.name
-         img.src= meals.url
-        memeSection.append(p,img)
-         };
-});
-  }
-             .then(resp => resp.json())
-             .then(data => {
-                 meals = data || [];
-                rendermeals();
-            })
-           .catch(error => {
-               console.log(error);
-            });
-    }
- });
+    const form = document.getElementById("search-form")
+    const searchInput = document.getElementById('search');
+    const meallist= document.getElementById('meals'); 
+    const categorylist  = document.getElementById('categories')
+    let searchType = 'user';
+    form.addEventListener('submit', function(event) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+        // Get the search term from the search input field and trim any leading or trailing whitespace
+        const searchTerm = searchInput.value.trim();
+        // If the search term is empty, alert the user and return early
+        if (searchTerm === '') return alert("No value submitted");
+   
+        // Check the current search type and call the appropriate search function
+        if (searchType === 'user') {
+            searchUsers(searchTerm);
+        } else {
+            searchRepos(searchTerm);
+        }
+    });
+         
+ let allContainers = document.querySelectorAll('.container')
+let allTxts= document.querySelectorAll('.text')
 const toggleMode = document.querySelector('button#mode');
  toggleMode.addEventListener('click', ()=>{
     if(allContainers[0].style.backgroundColor==='black'){
