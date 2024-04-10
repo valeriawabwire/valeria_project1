@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const searchInput = document.getElementById('search');
     const meallist= document.getElementById('meals'); 
     const categorylist  = document.getElementById('categories')
+    const toggleSearchTypeButton = document.getElementById('toggleSearchType'); 
+    const submitButton = document.querySelector('input[type="submit"]'); 
     let searchType = 'user';
     form.addEventListener('submit', function(event) {
         // Prevent the default form submission behavior
@@ -19,7 +21,12 @@ document.addEventListener("DOMContentLoaded", function() {
             searchRepos(searchTerm);
         }
     });
-         
+    toggleSearchTypeButton.addEventListener('click', function() {
+        // Toggle search type between 'user' and 'repo'
+        searchType = (searchType === 'user') ? 'meals' : 'categories';
+        // Change button text based on the new search type
+        submitButton.value = (searchType === 'user') ? 'Search Users' : 'Search Repos';
+    });
  let allContainers = document.querySelectorAll('.container')
 let allTxts= document.querySelectorAll('.text')
 const toggleMode = document.querySelector('button#mode');
