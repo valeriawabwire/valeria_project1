@@ -16,9 +16,9 @@ document.addEventListener("DOMContentLoaded", function() {
    
         // Check the current search type and call the appropriate search function
         if (searchType === 'user') {
-            searchUsers(searchTerm);
+            searchmeals(searchTerm);
         } else {
-            searchRepos(searchTerm);
+            searchcategories(searchTerm);
         }
     });
     toggleSearchTypeButton.addEventListener('click', function() {
@@ -27,6 +27,43 @@ document.addEventListener("DOMContentLoaded", function() {
         // Change button text based on the new search type
         submitButton.value = (searchType === 'user') ? 'Search meals' : 'Search categories';
     });
+    async function searchmeals(searchTerm) {
+        // Make an asynchronous HTTP GET request to the GitHub API's User Search Endpoint
+        const response = await fetch(`https://api.github.com/search/users?q=${searchTerm}`, {
+            headers: {
+                'Accept': 'application/vnd.github.v3+json' // Specify desired API version
+            }
+        });
+        // If the response is not successful, log an error message and return early
+        if (!response.ok) {
+            console.error('Error fetching users:', response.statusText);
+            return;
+        }
+        // Extract JSON data from the response
+        const data = await response.json();
+        // Call the displayUsers function with the retrieved user items
+        displaymeals(data.items);
+    }
+
+    // Function to search GitHub for repositories based on the provided search term
+    async function searchcategories(searchTerm) {
+        // Make an asynchronous HTTP GET request to the GitHub API's Repositories Search Endpoint
+        const response = await fetch(`https://api.github.com/search/repositories?q=${searchTerm}`, {
+            headers: {
+                'Accept': 'application/vnd.github.v3+json' // Specify desired API version
+            }
+        });
+        // If the response is not successful, log an error message and return early
+        if (!response.ok) {
+            console.error('Error fetching categories:', response.statusText);
+        return;
+        }
+        // Extract JSON data from the response
+        const data = await response.json();
+        // Call the displayRepos function with the retrieved repository items
+        displaycategories(data.items);
+    }
+ 
  let allContainers = document.querySelectorAll('.container')
 let allTxts= document.querySelectorAll('.text')
 const toggleMode = document.querySelector('button#mode');
