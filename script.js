@@ -14,14 +14,14 @@ document.addEventListener("DOMContentLoaded", function() {
   }
              .then(resp => resp.json())
              .then(data => {
-//                 meals = data || [];
-//                 rendermeals();
-//             })
-//             .catch(error => {
-//                 console.log(error);
-//             });
-//     }
-// });
+                 meals = data || [];
+                rendermeals();
+            })
+           .catch(error => {
+               console.log(error);
+            });
+    }
+ });
 const toggleMode = document.querySelector('button#mode');
  toggleMode.addEventListener('click', ()=>{
     if(allContainers[0].style.backgroundColor==='black'){
