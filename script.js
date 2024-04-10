@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Toggle search type between 'user' and 'repo'
         searchType = (searchType === 'user') ? 'meals' : 'categories';
         // Change button text based on the new search type
-        submitButton.value = (searchType === 'user') ? 'Search Users' : 'Search Repos';
+        submitButton.value = (searchType === 'user') ? 'Search meals' : 'Search categories';
     });
  let allContainers = document.querySelectorAll('.container')
 let allTxts= document.querySelectorAll('.text')
