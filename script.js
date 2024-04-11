@@ -29,6 +29,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   
 const button = document.getElementById("btn1")
+button.addEventListener('click', getMealList);
+function getMealList() {
+
+
+
+
+
+
+
+  
+}
+
+
 
 // document.addEventListener("DOMContentLoaded", function() {
 //     const button = document.getElementById('btn1')
