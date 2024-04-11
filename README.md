@@ -3,7 +3,9 @@
 ## By Valeria (https://github.com/valeriawabwire/valeria_project1)
 
 ## Description
-
+I am designing a recipe website that offers a user both recipe and ingredients for different types of meals
+the user can check for recipes by clicking a link
+the website also provides images for the different types of meals.
 
 
 ## Installation
