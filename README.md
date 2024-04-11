@@ -1,6 +1,6 @@
 ## PROJECT 1
 
-## By Valeria
+## By Valeria (https://github.com/valeriawabwire/valeria_project1)
 
 ## Description
 
@@ -13,7 +13,7 @@ You use git clone to be able to download the documents in the GitHub
 Git
 
 ## Live Link
-Git
+https://github.com/valeriawabwire/valeria_project1
 
 ## Technologies used
 1.HTML
