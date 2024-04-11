@@ -1,4 +1,3 @@
-
 const searchBtn = document.getElementById('search-btn');
 const mealList = document.getElementById('meal');
 const mealDetailsContent = document.querySelector('.meal-details-content');
@@ -50,7 +49,7 @@ function getMealRecipe(e){
     if(e.target.classList.contains('recipe-btn')){
         let mealItem = e.target.parentElement.parentElement;
         fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealItem.dataset.id}`)
-        
+        //fetch(`http://localhost:4000/categories.php?i=${mealItem.dataset.id}`)
         .then(response => response.json())
         .then(data => mealRecipeModal(data.meals));
     }
