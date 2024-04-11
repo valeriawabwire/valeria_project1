@@ -1,5 +1,7 @@
 const mealEndpoints = 'http://localhost:4000/meals1';
+const categoriesEndpoints = 'http://localhost:4000/categories';
 console.log(mealEndpoints);
+console.log(categoriesEndpoints);
 
 document.addEventListener("DOMContentLoaded", () => {
     
@@ -13,7 +15,21 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error('Error fetching meal data:', error)
         
       });
+    
+    fetch(categoriesEndpoints)
+        .then(response => response.json())
+        .then(data => {
+            
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error fetching categories data:', error)
+        
+      });
     });
+  
+const button = document.getElementById("btn1")
+
 // document.addEventListener("DOMContentLoaded", function() {
 //     const button = document.getElementById('btn1')
 
